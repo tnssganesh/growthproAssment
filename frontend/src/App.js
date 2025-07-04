@@ -8,12 +8,14 @@ function Dashboard() {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(false);
 
+const BASE_URL = import.meta.env.VITE_BACKEND_URL;
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
     try {
-      const response = await fetch('http://localhost:5000/business-data', {
+      const response = await fetch(`${BASE_URL}/business-data`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ businessName, location }),
@@ -28,7 +30,7 @@ function Dashboard() {
 
   const regenerateHeadline = async () => {
     try {
-      const response = await fetch('http://localhost:5000/regenerate-headline');
+      const response = await fetch(`${BASE_URL}/regenerate-headline`);
       const result = await response.json();
       setData(prev => ({ ...prev, headline: result.headline }));
     } catch (error) {

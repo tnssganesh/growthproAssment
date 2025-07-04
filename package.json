@@ -1,0 +1,29 @@
+{
+  "name": "growthpro",
+  "version": "1.0.0",
+  "description": "This project simulates a local business dashboard allowing small businesses to view their SEO content and simulated Google Business data.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "cd backend && nodemon server.js",
+    "client": "cd frontend && npm start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tnssganesh/growproAssment.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tnssganesh/growproAssment/issues"
+  },
+  "homepage": "https://github.com/tnssganesh/growproAssment#readme",
+  "devDependencies": {
+    "concurrently": "^9.2.0"
+  },
+  "dependencies": {
+    "dotenv": "^17.0.1"
+  }
+}

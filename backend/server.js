@@ -3,10 +3,12 @@ const express = require('express');
 const cors = require('cors');
 
 const app = express();
-app.use(cors());
+//app.use(cors());
+require('dotenv').config();
 app.use(express.json());
+app.use(cors({ origin: '*' }));
 
-const PORT = 5000;
+const PORT = process.env.PORT || 3000;
 
 const headlines = [
   "Discover Why This Bakery is Mumbai's Hidden Gem",
@@ -17,16 +19,17 @@ const headlines = [
 ];
 
 app.post('/business-data', (req, res) => {
-  const { name, location } = req.body;
+ // console.log(req.body)
+  const { businessName, location } = req.body;
   res.json({
     rating: 4.3,
     reviews: 127,
-    headline: `Why ${name} is ${location}'s Sweetest Spot in 2025`
+    headline: `Why ${businessName} is ${location}'s Sweetest Spot in 2025`
   });
 });
 
 app.get('/regenerate-headline', (req, res) => {
-  const { name = 'Your Business', location = 'Your City' } = req.query;
+
   const headline = headlines[Math.floor(Math.random() * headlines.length)];
   res.json({ headline });
 });
