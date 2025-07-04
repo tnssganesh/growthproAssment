@@ -1,0 +1,38 @@
+/* index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+input:focus, button:focus {
+  outline: none;
+  ring: 2px;
+  ring-color: #3b82f6;
+}
+
+form {
+  background: #ffffff;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+button {
+  transition: background-color 0.3s ease;
+}
+
+h1 {
+  color: #1f2937;
+}
+
+@media (max-width: 640px) {
+  form, .card {
+    padding: 1rem;
+  }
+  h1 {
+    font-size: 1.5rem;
+  }
+}
