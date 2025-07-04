@@ -8,7 +8,7 @@ function Dashboard() {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(false);
 
-const BASE_URL = import.meta.env.VITE_BACKEND_URL;
+const BASE_URL = 'http://localhost:5000';
 
 
   const handleSubmit = async (e) => {
